@@ -1,0 +1,25 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+input {
+  padding: 10px;
+  font-size: 14px;
+}
+
+button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background: #0b5ed7;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.checkbox {
+  margin-top: 10px;
+  display: block;
+}
