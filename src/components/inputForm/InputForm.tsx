@@ -37,23 +37,41 @@ const InputForm = ({ onCalculate }: InputFormProps) => {
   };
 
   return (
-    <div className="section">
-      <h2>Input Parameters</h2>
+<div className="section">
+  <h2>Input Parameters</h2>
 
-      <div className="grid">
-        <input name="componentWidth" placeholder="Component Width (mm)" onChange={handleChange} />
-        <input name="componentHeight" placeholder="Component Height (mm)" onChange={handleChange} />
-        <input name="workingDistance" placeholder="Working Distance (mm)" onChange={handleChange} />
-        <input name="accuracy" placeholder="Required Accuracy (µm)" onChange={handleChange} />
-      </div>
-
-      <label className="checkbox">
-        <input type="checkbox" name="color" onChange={handleChange} />
-        Color Camera
-      </label>
-
-      <button onClick={handleSubmit}>Calculate</button>
+  <div className="form-grid">
+    <div className="form-group">
+      <label>Component Width (mm)</label>
+      <input name="componentWidth" onChange={handleChange} />
     </div>
+
+    <div className="form-group">
+      <label>Component Height (mm)</label>
+      <input name="componentHeight" onChange={handleChange} />
+    </div>
+
+    <div className="form-group">
+      <label>Working Distance (mm)</label>
+      <input name="workingDistance" onChange={handleChange} />
+    </div>
+
+    <div className="form-group">
+      <label>Required Accuracy (µm)</label>
+      <input name="accuracy" onChange={handleChange} />
+    </div>
+  </div>
+
+  <div className="form-actions">
+    <div className="toggle">
+      <input type="checkbox" name="color" onChange={handleChange} />
+      <span>Color Camera</span>
+    </div>
+
+    <button onClick={handleSubmit}>Calculate</button>
+  </div>
+</div>
+
   );
 };
 

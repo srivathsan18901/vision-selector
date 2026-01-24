@@ -10,7 +10,9 @@ function Home() {
   return (
     <div className="container">
       <h1>Vision System Camera & Lens Selector</h1>
-
+      <p className="subtitle">
+        Camera & Lens recommendation based on component size, accuracy and working distance
+      </p>
       <InputForm onCalculate={setResult} />
 
       {result && (
