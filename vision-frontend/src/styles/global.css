@@ -1,10 +1,36 @@
 :root {
-  --primary: #2563eb;
-  --secondary: #0f172a;
+  /* Brand Colors */
+  --primary: #2563eb;      /* Blue */
+  --accent: #22c55e;       /* Green */
+  --warning: #f59e0b;      /* Amber */
+
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, #2563eb, #1e40af);
+  --gradient-accent: linear-gradient(135deg, #22c55e, #16a34a);
+
+  /* Neutrals */
   --bg: #f1f5f9;
   --card: #ffffff;
   --border: #e5e7eb;
+  --text-main: #0f172a;
   --text-muted: #64748b;
+}
+.header {
+  background: var(--gradient-primary);
+  padding: 28px;
+  border-radius: 18px;
+  color: white;
+  margin-bottom: 30px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 28px;
+}
+
+.header .subtitle {
+  color: #dbeafe;
+  margin-top: 8px;
 }
 
 body {
@@ -35,6 +61,11 @@ h1 {
   margin-bottom: 24px;
   border-radius: 14px;
   border: 1px solid var(--border);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06); transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.section:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.12);
 }
 
