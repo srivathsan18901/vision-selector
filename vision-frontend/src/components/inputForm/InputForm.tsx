@@ -4,7 +4,6 @@ import type { InputFormProps, VisionInput } from "./InputForm.types";
 import { toast } from "react-toastify";
 
 
-
 const InputForm = ({ onCalculate }: InputFormProps) => {
   const [form, setForm] = useState<VisionInput>({
     componentWidth: 0,
@@ -52,7 +51,7 @@ const handleSubmit = async () => {
     const data = await response.json();
 
     // Send backend result to Home.tsx
-    onCalculate(data);
+    onCalculate(data, form);
 
   } catch (error) {
     toast.error("Failed to calculate vision parameters");
@@ -61,41 +60,40 @@ const handleSubmit = async () => {
 };
 
   return (
-<div className="section">
-  <h2>Input Parameters</h2>
+  <div className="section">
+    <h2>Input Parameters</h2>
 
-  <div className="form-grid">
-    <div className="form-group">
-      <label>Component Width (mm)</label>
-      <input name="componentWidth" onChange={handleChange} />
+    <div className="form-grid">
+      <div className="form-group">
+        <label>Component Width (mm)</label>
+        <input name="componentWidth" onChange={handleChange} />
+      </div>
+
+      <div className="form-group">
+        <label>Component Height (mm)</label>
+        <input name="componentHeight" onChange={handleChange} />
+      </div>
+
+      <div className="form-group">
+        <label>Working Distance (mm)</label>
+        <input name="workingDistance" onChange={handleChange} />
+      </div>
+
+      <div className="form-group">
+        <label>Required Accuracy (µm)</label>
+        <input name="accuracy" onChange={handleChange} />
+      </div>
     </div>
 
-    <div className="form-group">
-      <label>Component Height (mm)</label>
-      <input name="componentHeight" onChange={handleChange} />
-    </div>
+    <div className="form-actions">
+      <div className="toggle">
+        <input type="checkbox" name="color" onChange={handleChange} />
+        <span>Color Camera</span>
+      </div>
 
-    <div className="form-group">
-      <label>Working Distance (mm)</label>
-      <input name="workingDistance" onChange={handleChange} />
-    </div>
-
-    <div className="form-group">
-      <label>Required Accuracy (µm)</label>
-      <input name="accuracy" onChange={handleChange} />
+      <button onClick={handleSubmit}>Calculate</button>
     </div>
   </div>
-
-  <div className="form-actions">
-    <div className="toggle">
-      <input type="checkbox" name="color" onChange={handleChange} />
-      <span>Color Camera</span>
-    </div>
-
-    <button onClick={handleSubmit}>Calculate</button>
-  </div>
-</div>
-
   );
 };
 

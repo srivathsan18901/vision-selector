@@ -5,8 +5,10 @@ import Results from '../components/result/result';
 import { useState } from 'react';
 import Toast from '../components/toast/toast';
 
+
 function Home() {  
   const [result, setResult] = useState<any>(null);
+  const [input, setInput] = useState<any>(null);
 
   return (
     <div className="container">
@@ -17,11 +19,15 @@ function Home() {
       </p>
     </div>
 
-      <InputForm onCalculate={setResult} />
+      <InputForm onCalculate={(data, form) => {
+        setResult(data);
+        setInput(form);
+      }} />
+
 
       {result && (
         <>
-          <Results data={result.calculation} />
+          <Results data={result.calculation} input={input} />
           <Recommendations data={result.recommendations} />
         </>
       )}

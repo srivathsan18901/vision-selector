@@ -7,6 +7,5 @@ export interface VisionInput {
 }
 
 export interface InputFormProps {
-  onCalculate: (data: any) => void;
+  onCalculate: (data: any, input: VisionInput) => void;
 }
-
