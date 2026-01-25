@@ -1,6 +1,8 @@
 import { useState } from "react";
 import "./InputForm.css";
 import type { InputFormProps, VisionInput } from "./InputForm.types";
+import { toast } from "react-toastify";
+
 
 
 const InputForm = ({ onCalculate }: InputFormProps) => {
@@ -21,6 +23,11 @@ const InputForm = ({ onCalculate }: InputFormProps) => {
   };
 
 const handleSubmit = async () => {
+  if (form.componentWidth <= 0 || form.componentHeight <= 0 || form.workingDistance <= 0 || form.accuracy <= 0) {
+    toast.error("Please fill in all fields with valid values.");
+    return;
+  }
+
   try {
     const response = await fetch(
       "http://localhost:5000/api/vision/calculate",
@@ -33,8 +40,13 @@ const handleSubmit = async () => {
       }
     );
 
+    if (response.ok) {
+     toast.success("Vision parameters calculated successfully");
+    }
+
     if (!response.ok) {
-      throw new Error("Backend calculation failed");
+      toast.error("Backend service unavailable");
+      return;
     }
 
     const data = await response.json();
@@ -43,8 +55,8 @@ const handleSubmit = async () => {
     onCalculate(data);
 
   } catch (error) {
-    console.error("Error:", error);
-    alert("Failed to calculate vision parameters");
+    toast.error("Failed to calculate vision parameters");
+    return
   }
 };
 

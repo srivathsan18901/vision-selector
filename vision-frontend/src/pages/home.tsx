@@ -3,6 +3,7 @@ import InputForm from '../components/inputForm/InputForm'
 import Recommendations from '../components/recommendations/recommendations'
 import Results from '../components/result/result';
 import { useState } from 'react';
+import Toast from '../components/toast/toast';
 
 function Home() {  
   const [result, setResult] = useState<any>(null);
