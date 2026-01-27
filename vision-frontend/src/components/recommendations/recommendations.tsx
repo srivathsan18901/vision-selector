@@ -1,8 +1,14 @@
 import "./Recommendations.css";
 
 const Recommendations = ({ data }: any) => {
-  const cameras = Array.isArray(data?.cameras) ? data.cameras : [];
-  const lenses = Array.isArray(data?.lenses) ? data.lenses : [];
+  
+  const cameras = Array.isArray(data)
+    ? data.map((item: any) => item.camera)
+    : [];
+
+  const lenses = Array.isArray(data)
+    ? data.flatMap((item: any) => item.lenses)
+    : [];
 
   return (
     <div className="section">

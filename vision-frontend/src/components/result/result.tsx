@@ -4,6 +4,10 @@ import { useState } from "react";
 const Results = ({ data, input }: any) => {
   const [showDetails, setShowDetails] = useState(false);
 
+  if (!data || !input) {
+    return null;
+  }
+
   return (
     <div className="section">
       <div className="results-header">
@@ -51,9 +55,13 @@ const Results = ({ data, input }: any) => {
           <p>
             <strong>2. Accuracy & Pixel Resolution</strong><br />
             Required accuracy = {input.accuracy} µm<br />
-            Rule applied = 3 pixels per feature<br />
-            <em>Resolution = {data.micronPerPixel.toFixed(2)} µm/px</em>
+            Camera type = {input.color ? "Color (Bayer)" : "Monochrome"}<br />
+            Rule applied = {data.pixelsPerFeature} pixels per feature<br />
+            <em>
+              Resolution = {data.micronPerPixel.toFixed(2)} µm / pixel
+            </em>
           </p>
+
 
           <p>
             <strong>3. Required Sensor Resolution</strong><br />

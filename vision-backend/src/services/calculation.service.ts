@@ -1,20 +1,15 @@
-import { VisionInput } from "../types/vision.types";
+export function getMicronPerPixel(
+  accuracy: number,
+  isColor: boolean
+) {
+  const pixelsPerFeature = isColor ? 3 : 1;
+  return accuracy / pixelsPerFeature;
+}
 
-export function calculateVision(input: VisionInput) {
+export function getRequiredFOV(
+  width: number,
+  height: number
+) {
   const margin = 1.2;
-
-  const fov = Math.max(
-    input.componentWidth,
-    input.componentHeight
-  ) * margin;
-
-  const micronPerPixel = input.accuracy / 3;
-
-  const requiredPixels = (fov * 1000) / micronPerPixel;
-
-  return {
-    fov,
-    micronPerPixel,
-    requiredPixels
-  };
+  return Math.max(width, height) * margin;
 }
