@@ -35,3 +35,39 @@
   cursor: pointer;
   text-decoration: underline;
 }
+
+.calc-details {
+  margin-top: 20px;
+  padding: 18px;
+  background: #f8fafc;
+  border-radius: 14px;
+  border-left: 5px solid var(--accent);
+  animation: fadeIn 0.25s ease;
+}
+
+.calc-details h3 {
+  margin-top: 0;
+  color: var(--primary);
+}
+
+.calc-details p {
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 14px;
+}
+
+.calc-details em {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

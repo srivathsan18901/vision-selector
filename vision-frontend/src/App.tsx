@@ -6,7 +6,6 @@ import { ToastContainer } from 'react-toastify';
 
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (<>
     <Home />
@@ -18,6 +17,7 @@ function App() {
         pauseOnHover
         theme="colored"
       /></>
+      
   )
 }
 
