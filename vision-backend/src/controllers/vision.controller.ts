@@ -36,7 +36,7 @@ res.json({
     fov: requiredFOV,
     requiredPixels: (requiredFOV * 1000) / micronPerPixel,
     micronPerPixel,
-    pixelsPerFeature: input.color ? 3 : 1,
+    pixelsPerFeature: input.color ? 5 : 3,
     focalLength
   },
   recommendations

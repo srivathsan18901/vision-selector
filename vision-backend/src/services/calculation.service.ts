@@ -2,7 +2,7 @@ export function getMicronPerPixel(
   accuracy: number,
   isColor: boolean
 ) {
-  const pixelsPerFeature = isColor ? 3 : 1;
+  const pixelsPerFeature = isColor ? 5 : 3;
   return accuracy / pixelsPerFeature;
 }
 
