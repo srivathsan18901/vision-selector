@@ -16,6 +16,102 @@
   --text-muted: #64748b;
 }
 
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.section {
+  animation: fadeInUp 0.5s ease;
+}
+
+
+/* HERO SECTION */
+.hero {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 32px;
+  padding: 40px;
+  border-radius: 24px;
+  margin-bottom: 40px;
+
+  background: linear-gradient(
+    135deg,
+    rgba(255,255,255,0.85),
+    rgba(255,255,255,0.65)
+  );
+}
+
+.hero-left h1 {
+  font-size: 42px;
+  line-height: 1.2;
+  margin: 16px 0;
+  color: var(--text-main);
+}
+
+.hero-left .subtitle {
+  font-size: 18px;
+  max-width: 480px;
+}
+
+.badge-pill {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(37,99,235,0.15);
+  color: var(--primary);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.cta-btn {
+  margin-top: 24px;
+  padding: 14px 32px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 14px;
+  border: none;
+  cursor: pointer;
+  color: white;
+
+  background: var(--gradient-primary);
+  box-shadow: 0 12px 30px rgba(37,99,235,0.45);
+}
+
+.cta-btn:hover {
+  transform: translateY(-1px);
+}
+
+/* HERO RIGHT VISUAL */
+.hero-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero-video{
+  width: 500px;
+}
+
+.hero-art {
+  width: 100%;
+  height: 280px;
+  border-radius: 24px;
+
+  background:
+    radial-gradient(circle at top left, #a78bfa, transparent 60%),
+    radial-gradient(circle at bottom right, #38bdf8, transparent 60%),
+    linear-gradient(135deg, #1e3a8a, #0ea5e9);
+
+  box-shadow: inset 0 0 40px rgba(255,255,255,0.3);
+}
+
+
 .header {
   background: var(--gradient-primary);
   padding: 28px;
