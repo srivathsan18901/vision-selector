@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 import InputForm from "../components/inputForm/InputForm";
 import Recommendations from "../components/recommendations/recommendations";
 import Results from "../components/result/result";
-import HeroVid from "../assets/Main_video/Industrial_Vision_System_Video_Generation.mp4"
+import HeroVid from "../assets/Main_video/Industrial_Vision_System_Video_Generation.mp4";
 
 function Home() {
   const [result, setResult] = useState<any>(null);
@@ -27,7 +27,9 @@ function Home() {
         <div className="hero-left">
           <span className="badge-pill">🚀 Smart Vision selection Tool</span>
 
-          <h1>BGR Neo <br/> Vision System Selector</h1>
+          <h1>
+            BGR Neo <br /> Vision System Selector
+          </h1>
 
           <p className="subtitle">
             Intelligent camera & lens selection for machine vision systems
@@ -48,7 +50,6 @@ function Home() {
             playsInline
           />
         </div>
-
       </div>
 
       {/* INPUT FORM (VISIBLE ONLY AFTER CLICK) */}
