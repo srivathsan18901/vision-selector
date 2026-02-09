@@ -66,22 +66,22 @@ const handleSubmit = async () => {
     <div className="form-grid">
       <div className="form-group">
         <label>Component Width (mm)</label>
-        <input name="componentWidth" onChange={handleChange} />
+        <input type="number" name="componentWidth" onChange={handleChange} />
       </div>
 
       <div className="form-group">
         <label>Component Height (mm)</label>
-        <input name="componentHeight" onChange={handleChange} />
+        <input type="number" name="componentHeight" onChange={handleChange} />
       </div>
 
       <div className="form-group">
         <label>Working Distance (mm)</label>
-        <input name="workingDistance" onChange={handleChange} />
+        <input type="number" name="workingDistance" onChange={handleChange} />
       </div>
 
       <div className="form-group">
         <label>Required Accuracy (µm)</label>
-        <input name="accuracy" onChange={handleChange} />
+        <input type="number" name="accuracy" onChange={handleChange} />
       </div>
     </div>
 

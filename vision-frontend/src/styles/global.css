@@ -33,6 +33,7 @@
 
 /* HERO SECTION */
 .hero {
+  animation: fadeInUp 0.5s ease;
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
   gap: 32px;
@@ -169,11 +170,10 @@ h1 {
 }
 
 .section {
-  background: rgba(129, 164, 206, 0.385);
+  background: rgb(244 244 244 / 75%);
   padding: 24px;
   margin-bottom: 24px;
   border-radius: 14px;
-  border: 1px solid var(--border);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
   transition:
     transform 0.2s ease,
@@ -183,4 +183,24 @@ h1 {
 .section:hover {
   transform: translateY(-2px);
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+}
+
+.back-bar {
+  background: rgb(244 244 244 / 75%);
+  display: flex;
+  width: fit-content;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 12px;
+  justify-content: flex-start;
+}
+
+.back-icon {
+  cursor: pointer;
+  font-size: 14 px;
+  font-weight: 500;
+  color: var(--primary);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
 }

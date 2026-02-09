@@ -20,41 +20,58 @@ function Home() {
     }, 100);
   };
 
+  const handleBackToHero = () => {
+    setShowForm(false);
+    setResult(null);
+    setInput(null);
+
+    // optional: scroll to top smoothly
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <div className="container">
-      {/* HERO SECTION */}
-      <div className="hero">
-        <div className="hero-left">
-          <span className="badge-pill">🚀 Smart Vision selection Tool</span>
+      {/* HERO SECTION (VISIBLE ONLY BEFORE GET STARTED) */}
+      {!showForm && (
+        <div className="hero">
+          <div className="hero-left">
+            <span className="badge-pill">🚀 Smart Vision selection Tool</span>
 
-          <h1>
-            BGR Neo <br /> Vision System Selector
-          </h1>
+            <h1>
+              BGR Neo <br /> Vision System Selector
+            </h1>
 
-          <p className="subtitle">
-            Intelligent camera & lens selection for machine vision systems
-          </p>
+            <p className="subtitle">
+              Intelligent camera & lens selection for machine vision systems
+            </p>
 
-          <button className="cta-btn" onClick={handleGetStarted}>
-            Get Started
-          </button>
+            <button className="cta-btn" onClick={handleGetStarted}>
+              Get Started
+            </button>
+          </div>
+
+          <div className="hero-right">
+            <video
+              className="hero-video"
+              src={HeroVid}
+              autoPlay
+              loop
+              muted
+              playsInline
+            />
+          </div>
         </div>
-
-        <div className="hero-right">
-          <video
-            className="hero-video"
-            src={HeroVid}
-            autoPlay
-            loop
-            muted
-            playsInline
-          />
-        </div>
-      </div>
+      )}
 
       {/* INPUT FORM (VISIBLE ONLY AFTER CLICK) */}
       {showForm && (
         <div ref={formRef}>
+          <div className="back-bar">
+            <span className="back-icon" onClick={handleBackToHero}>
+              ← Back
+            </span>
+          </div>
+
           <InputForm
             onCalculate={(data: any, form: any) => {
               setResult(data);
