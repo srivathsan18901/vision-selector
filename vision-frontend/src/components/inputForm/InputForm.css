@@ -41,6 +41,9 @@
   display: flex;
   align-items: center;
   gap: 8px;
+  font-size: 13px;
+  color: #0069ff;
+  font-weight: bold;
 }
 
 .toggle input {
